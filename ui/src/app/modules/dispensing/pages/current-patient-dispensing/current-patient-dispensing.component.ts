@@ -178,9 +178,9 @@ export class CurrentPatientDispensingComponent implements OnInit {
       );
   }
 
-  onBack(e: MouseEvent) {
-    e.stopPropagation();
-    this.store.dispatch(go({ path: ["/dispensing"] }));
+  onBack(): void {
+    // e.stopPropagation();
+    // this.store.dispatch(go({ path: ["/dispensing"] }));
     this.location.back();
   }
 
