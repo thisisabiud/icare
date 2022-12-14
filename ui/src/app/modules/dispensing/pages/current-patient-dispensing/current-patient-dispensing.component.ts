@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { ActivatedRoute } from "@angular/router";
-import { Location } from "@angular/common";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { DrugOrder } from "src/app/shared/resources/order/models/drug-order.model";
+import { Location } from "@angular/common";
 import {
   ActionButtonStyle,
   TableActionOption,
@@ -56,8 +56,8 @@ export class CurrentPatientDispensingComponent implements OnInit {
   errors: any[] = [];
   constructor(
     private route: ActivatedRoute,
-    private location: Location,
     private systemSettingsService: SystemSettingsService,
+    private location: Location,
     private dialog: MatDialog,
     private visitService: VisitsService,
     private store: Store<AppState>,
@@ -180,8 +180,8 @@ export class CurrentPatientDispensingComponent implements OnInit {
 
   onBack(e: MouseEvent) {
     e.stopPropagation();
-    this.location.back();
     this.store.dispatch(go({ path: ["/dispensing"] }));
+    this.location.back();
   }
 
   onSelectAction(
